@@ -7,10 +7,6 @@ class Program
 		string str = "Holberton School";
 	    
 		Console.WriteLine($"{str}{str}{str}");
-
-		for (int i = 0; i < 9; i++)
-		{
-			Console.Write(str[i]);
-		}
+		Console.WriteLine(str.Substring(0, 9));
     }
 }
