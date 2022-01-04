@@ -1,7 +1,5 @@
 ﻿using System;
 
-namespace ConsoleApp1
-{
     internal class Program
     {
 		static void Main(string[] args)
@@ -12,4 +10,3 @@ namespace ConsoleApp1
 			Console.WriteLine("Welcome to {0}!", str1);
 		}
 	}
-}
