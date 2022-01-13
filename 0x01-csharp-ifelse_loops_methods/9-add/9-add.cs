@@ -1,11 +1,11 @@
 ﻿using System;
 
-    class Number
+class Number
+{
+    public static int Add(int a, int b)
     {
-        public static int Add(int a, int b)
-        {
             int total;
             total = a + b;
             return total;
-        }
     }
+}
