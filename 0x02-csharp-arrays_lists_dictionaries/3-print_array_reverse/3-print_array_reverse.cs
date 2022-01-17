@@ -13,9 +13,9 @@ class Array
         char sep = ' ';
         for (var i = array.Length - 1; i >= 0; i--)
         {
-            Console.Write($"{array[i]}{sep}");
             if (i == 0)
                 sep = '\n';
+            Console.Write($"{array[i]}{sep}");
         }  
     }
 }
