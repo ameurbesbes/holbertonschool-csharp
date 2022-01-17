@@ -21,6 +21,7 @@ class Array
             output.Append(i);
             if (i < size - 1)
                 output.Append(" ");
+            array[i] = i;
         }
         Console.WriteLine(output);
         return array;
