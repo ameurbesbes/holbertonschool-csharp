@@ -18,7 +18,7 @@ class Array
         for (int i = 0; i < size; i++)
         {
             output.Append(i);
-            if (i < size - 1)
+            if (i != size - 1)
                 output.Append(" ");
             array[i] = i;
         }
