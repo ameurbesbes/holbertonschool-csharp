@@ -7,12 +7,12 @@ class Array
         
         if (array != null && array.Length != 0)
         {
-            
+            var sep = " ";
             for (var i = array.Length - 1; i >= 0; i--)
-            { 
-                Console.Write($"{array[i]} ");
+            {
+                Console.Write($"{array[i]}{sep}");
                 if (i == 0)
-                    Console.Write("\n");
+                    sep = "\n";
             }  
         }
         else
