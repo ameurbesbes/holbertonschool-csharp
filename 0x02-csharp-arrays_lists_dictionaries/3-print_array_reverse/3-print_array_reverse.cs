@@ -9,8 +9,11 @@ class Array
         {
             
             for (var i = array.Length - 1; i >= 0; i--)
+            { 
                 Console.Write($"{array[i]} ");
-            Console.Write("\n");
+                if (i == 0)
+                    Console.Write("\n");
+            }  
         }
         else
         {
