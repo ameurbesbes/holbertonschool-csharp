@@ -12,7 +12,7 @@ class List
             different.Add(elem);
             }
         }
-        foreach (var elem in list1)
+        foreach (var elem in list2)
         {
             if (!list1.Contains(elem)){
                 different.Add(elem);
