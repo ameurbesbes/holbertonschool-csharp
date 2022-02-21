@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _0x04_csharp_exceptions
+class List
 {
-    internal class Program
+    public static int SafePrint(List<int> myList, int n)
     {
-        static void Main(string[] args)
+        int i = 0;
+        try
         {
-            Console.WriteLine("Hello World!");
+            for ( i = 0 ; i < n ; i++ )
+                Console.WriteLine(myList[i]);
         }
+        catch
+        {
+
+        }
+        return i;
     }
 }
