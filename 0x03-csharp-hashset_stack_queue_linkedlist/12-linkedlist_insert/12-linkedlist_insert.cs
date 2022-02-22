@@ -15,7 +15,8 @@ class LList
                 node = myLList.AddAfter(node, n);
                 return node;
             }
-            node = node.Next;
+            if(node.Next.Value != n)
+                node = node.Next;
         }
         node = myLList.AddLast(n);
         return node;
