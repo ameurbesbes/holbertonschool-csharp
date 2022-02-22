@@ -10,7 +10,7 @@ class LList
             return myLList.AddFirst(n);
         while (node.Next != null)
         {
-            if (node.Next.Value >= n)
+            if (node.Next.Value > n)
             {
                 node = myLList.AddAfter(node, n);
                 return node;
