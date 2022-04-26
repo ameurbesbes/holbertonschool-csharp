@@ -1,34 +1,28 @@
 ﻿using System;
 /// <summary>
-/// VectorMath: Class
+/// class VectorMath
 /// </summary>
-public class VectorMath
+class VectorMath
 {
     /// <summary>
-    /// calculates the sum of two vectors
+    /// calculat sum of two vector
     /// </summary>
-    /// <param name="vector1">First vector</param>
-    /// <param name="vector2">Second vector</param>
-    /// <returns></returns>
+    /// <param name="vector1">vector 1</param>
+    /// <param name="vector2">vector 2</param>
+    /// <returns>vector of sum</returns>
     public static double[] Add(double[] vector1, double[] vector2)
     {
-        int lv1 = vector1.Length;
-        int lv2 = vector2.Length;
-        if (lv1 == lv2 || (lv1 != 2 && lv1 != 3))
+        if (vector1.Length != vector2.Length ||
+           vector1.Length != 3 && vector1.Length != 2 ||
+           vector2.Length != 3 && vector2.Length != 2)
         {
-            double[] sum = new double[lv1];
-            for (int i = 0; i < lv1; i++)
-            {
-                sum[i] = vector1[i] + vector2[i];
-            }
-            return sum;
+            return (new Double[1] { -1 });
         }
-        else
+        double[] res = new Double[3];
+        for (int i = 0; i < vector1.Length; i++)
         {
-            return new double[] { -1 };
-
+            res[i] = vector1[i] + vector2[i];
         }
-
-        return new double[] { -1 };
+        return res;
     }
 }
