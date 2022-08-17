@@ -71,4 +71,5 @@ public class Door : Base, IInteractive
     {
         Console.WriteLine($"You try to open the {name}. It's locked");
     }
+
 }
