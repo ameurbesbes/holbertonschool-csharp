@@ -73,6 +73,9 @@ public class Door : Base, IInteractive
     }
 
 }
+/// <summary>
+/// Decoration Class
+/// </summary>
 public class Decoration : Base, IInteractive, IBreakable
 {
      ///<summary>
