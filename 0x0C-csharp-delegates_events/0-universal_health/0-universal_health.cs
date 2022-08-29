@@ -29,6 +29,6 @@ public class Player
     /// </summary>
     public void PrintHealth()
     {
-        Console.WriteLine($"{this.name} has {this.hp} / {this.maxHp} health=100f");
+        Console.WriteLine($"{this.name} has {this.hp} / {this.maxHp}");
     }
 }
