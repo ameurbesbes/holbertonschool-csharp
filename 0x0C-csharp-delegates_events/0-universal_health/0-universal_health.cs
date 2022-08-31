@@ -1,34 +1,49 @@
 ﻿using System;
+
 /// <summary>
-/// class player 
+/// Player: class
 /// </summary>
 public class Player
 {
-    private string name;
-    private float maxHp;
-    private float hp;
-    /// <summary>
-    /// constructor for the player class
-    /// </summary>
-    /// <param name="name"> the name of the player</param>
-    /// <param name="maxHp"> the max hp of the player</param>
-    public Player(string name = "Player", float maxHp=100f)
+	/// <summary>
+	/// name: property
+	/// </summary>
+	private string name;
+	
+	/// <summary>
+	/// maxHp: property
+	/// </summary>
+	private float maxHp;
+	
+	/// <summary>
+	/// hp: property
+	/// </summary>
+	private float hp;
+
+
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="name">string</param>
+	/// <param name="maxHp">float</param>
+	public Player(string name = "Player", float maxHp = 100f)
     {
-        if (maxHp <= 0)
+		this.name = name;
+		if(maxHp <= 0)
         {
-            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
-            this.maxHp = 100f;
+			this.maxHp = 100f;
+			Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
-        
-        this.maxHp = maxHp;
-        this.name = name;
-        this.hp = this.maxHp;
+		else
+			this.maxHp = maxHp;
+		hp = this.maxHp;
     }
-    /// <summary>
-    /// display the hp of the playeer
-    /// </summary>
-    public void PrintHealth()
+
+	/// <summary>
+	/// PrintHealth: method that prints player's current health status
+	/// </summary>
+	public void PrintHealth()
     {
-        Console.WriteLine($"{this.name} has {this.hp} / {this.maxHp}");
+		Console.WriteLine($"{name} has {hp} / {maxHp} health");
     }
 }
