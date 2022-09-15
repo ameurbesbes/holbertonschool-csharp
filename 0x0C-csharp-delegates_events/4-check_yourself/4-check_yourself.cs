@@ -115,11 +115,17 @@ public class Player
     public float ApplyModifier(float baseValue, Modifier modifier)
     {
         if (modifier == Modifier.Weak)
+        {
             return baseValue / 2;
+        }
         else if (modifier == Modifier.Strong)
+        {
             return baseValue * 1.5f;
+        }
         else
+        {
             return baseValue;
+        }
     }
     /// <summary>
     /// display the hp of the playeer
