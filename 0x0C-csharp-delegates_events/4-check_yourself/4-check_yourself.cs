@@ -44,7 +44,6 @@ public class CurrentHPArgs : EventArgs
         currentHp = newHp;
     }
 }
-
 /// <summary>
 /// class player 
 /// </summary>
@@ -66,45 +65,39 @@ public class Player
     public Player(string name = "Player", float maxHp = 100f)
     {
 
-        this.name = name;
 
         if (maxHp <= 0)
         {
-            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
             maxHp = 100f;
+            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
+        this.name = name;
         this.maxHp = maxHp;
-
-        this.hp = maxHp;
+        hp = maxHp;
         status = $"{name} is ready to go!";
+
         HPCheck += CheckStatus;
     }
+    /// <summary>
+    /// 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void CheckStatus(object sender, CurrentHPArgs e)
     {
-        if (e.currentHp == this.maxHp)
-        {
+        if (e.currentHp == maxHp)
             status = $"{name} is in perfect health!";
-        }
-        else if (e.currentHp >= (this.maxHp / 2))
-        {
+        else if (e.currentHp >= maxHp / 2 && e.currentHp < maxHp)
             status = $"{name} is doing well!";
-        }
-        else if (e.currentHp >= (this.maxHp / 4))
-        {
+        else if (e.currentHp >= maxHp / 4 && e.currentHp < maxHp / 2)
             status = $"{name} isn't doing too great...";
-        }
-        else if (e.currentHp > 0)
-        {
+        else if (e.currentHp > 0 && e.currentHp < maxHp / 2)
             status = $"{name} needs help!";
-        }
-        else
-        {
-            status = $"{name} is knocked out!";
-        }
+        else status = $"{name} is knocked out!";
+
         Console.WriteLine(status);
+
+
     }
     /// <summary>
     /// apply a modefier on the player
@@ -114,18 +107,16 @@ public class Player
     /// <returns></returns>
     public float ApplyModifier(float baseValue, Modifier modifier)
     {
-        if (modifier == Modifier.Weak)
+        if (modifier is Modifier.Weak)
         {
             return baseValue / 2;
         }
-        else if (modifier == Modifier.Strong)
+        if (modifier is Modifier.Strong)
         {
             return baseValue * 1.5f;
         }
-        else
-        {
-            return baseValue;
-        }
+        return baseValue;
+
     }
     /// <summary>
     /// display the hp of the playeer
@@ -186,6 +177,7 @@ public class Player
             hp = newHp;
         }
         HPCheck?.Invoke(this, new CurrentHPArgs(hp));
+
     }
 
 }
