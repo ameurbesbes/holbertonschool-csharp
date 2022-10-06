@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace InventoryManager
+namespace JSONStorage
 {
     public class JSONStorage
     {
@@ -40,5 +40,4 @@ namespace InventoryManager
                 objects = JsonSerializer.Deserialize<Dictionary<string, dynamic>>(jsonString);
             }
     }
-
 }
