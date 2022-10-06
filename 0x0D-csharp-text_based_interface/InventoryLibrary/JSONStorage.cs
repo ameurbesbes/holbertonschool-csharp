@@ -19,7 +19,7 @@ namespace InventoryManager
             {
                 try
                 {
-                    objects.Add($"{obj.GetType().Name{obj.id}", obj);
+                    objects.Add($"{obj.GetType().Name}.{obj.id}", obj);
                 }
                 catch (Exeption)
                 {
